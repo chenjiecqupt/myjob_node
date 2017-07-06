@@ -29,7 +29,7 @@ var json1 = { title: 'Express' ,name: 'chenjie'};
 router.get('/', function(req, res, next) {
     /*res.render('admin', json1);*/
     /*res.send('respond with a resource');*/
-    console.log('req.body:'+req.body.name);
+    console.log('req.body:'+req.body.title);
     var comment = new Comment();
     console.log('req.body:'+req.body);
     comment.readComment(function(err,result){
@@ -41,13 +41,6 @@ router.get('/', function(req, res, next) {
                 items: result,
                 name: 'chenjie'
             });
-            console.log(res.body);
-            return {
-                items: result,
-                name: 'chenjie'
-            };
-            /*console.log(res);*/
-
         }
     })
 });
