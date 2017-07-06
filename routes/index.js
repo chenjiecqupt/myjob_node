@@ -17,6 +17,11 @@ router.get('/', function(req, res, next) {
     console.log('test1');
     /*res.render('test1', { title: 'Express' ,str: str});*/
 });
+router.get('/test', function(req, res, next) {
+    res.render('index', { title: 'Express' ,str: '测试'});
+    console.log('test1');
+    /*res.render('test1', { title: 'Express' ,str: str});*/
+});
 router.get('/js', function(req, res, next) {
     var str= '没有读取到数据';
     fs.readFile("routes/index.js",'utf-8',function(err,data){

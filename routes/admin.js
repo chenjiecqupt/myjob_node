@@ -6,10 +6,12 @@ var router = express.Router();
 var Comment = require('../server/test1');
 var json1 = { title: 'Express' ,name: 'chenjie'};
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-    /*res.render('admin', json1);*/
-    /*res.send('respond with a resource');*/
+/*router.get('/', function(req, res, next) {
+    /!*res.render('admin', json1);*!/
+    /!*res.send('respond with a resource');*!/
+    console.log('req.body:'+req.body.name);
     var comment = new Comment();
+    console.log('req.body:'+req.body);
     comment.readComment(function(err,result){
         if(err){
             console.log('读取数据库失败！');
@@ -19,6 +21,33 @@ router.get('/', function(req, res, next) {
                 items: result,
                 name: 'chenjie'
             });
+            /!*console.log(res);*!/
+
+        }
+    })
+});*/
+router.get('/', function(req, res, next) {
+    /*res.render('admin', json1);*/
+    /*res.send('respond with a resource');*/
+    console.log('req.body:'+req.body.name);
+    var comment = new Comment();
+    console.log('req.body:'+req.body);
+    comment.readComment(function(err,result){
+        if(err){
+            console.log('读取数据库失败！');
+            res.status(404).end(err);
+        }else{
+            res.send({
+                items: result,
+                name: 'chenjie'
+            });
+            console.log(res.body);
+            return {
+                items: result,
+                name: 'chenjie'
+            };
+            /*console.log(res);*/
+
         }
     })
 });
