@@ -3,9 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>管理员界面</title>
-  <link rel="stylesheet" href="/public/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-欢迎管理员<%=name%>,登录系统
+<h3>
+  欢迎管理员<%=name%>登录系统
+</h3>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>idcard</th>
+      <th>name</th>
+      <th>unit_oid</th>
+    </tr>
+  </thead>
+    <% for(var i=0; i<items.length; i++) { %>
+      <tr>
+          <td>
+              <%=items[i].id %>
+          </td>
+        <td>
+            <%=items[i].idcard %>
+        </td>
+        <td>
+            <%=items[i].name %>
+        </td>
+        <td>
+            <%=items[i].unit_oid %>
+        </td>
+      </tr>
+    <% } %>
+</table>
 </body>
 </html>

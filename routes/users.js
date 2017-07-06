@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var request = require('request');
+/*var request = require('request');*/
 var json1 = { title: 'Express' ,str: 'info for users'};
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+/*router.get('/', function(req, res, next) {
     var method = req.method.toUpperCase();
     var proxy_url = 'test.json';
 
@@ -25,8 +25,8 @@ router.get('/', function(req, res, next) {
 
     request(options, callback);
     res.render('test1', json1);
-    /*res.send('respond with a resource');*/
-});
+    /!*res.send('respond with a resource');*!/
+});*/
 router.get('/a', function(req, res, next) {
     res.render('a', { title: '/a' ,str: 'aaaaaaaaa'});
     /*res.send('respond with a resource');*/

@@ -6,3 +6,16 @@ body {
 a {
   color: #00B7FF;
 }
+table{
+  border: 1px solid rebeccapurple;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 1px;
+}
+th{
+  font-weight: bold;
+}
+th,td{
+  text-align: center;
+  border: 1px solid rebeccapurple;
+}
