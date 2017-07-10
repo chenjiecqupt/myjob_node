@@ -61,8 +61,5 @@ router.get('/img', function(req, res, next) {
     console.log('test1');
     /*res.render('test1', { title: 'Express' ,str: str});*/
 });
-router.get('/angular', function(req, res, next) {
-    res.render('angular', { title: 'angular 框架'});
-    /*res.send('respond with a resource');*/
-});
+
 module.exports = router;
