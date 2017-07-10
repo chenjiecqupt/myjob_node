@@ -61,5 +61,7 @@ router.get('/img', function(req, res, next) {
     console.log('test1');
     /*res.render('test1', { title: 'Express' ,str: str});*/
 });
-
+router.get('/sql', function(req, res, next) {
+    res.render('test1', { title: 'Express' ,str: '345345'});
+});
 module.exports = router;

@@ -26,7 +26,7 @@ var json1 = { title: 'Express' ,name: 'chenjie'};
         }
     })
 });*/
-router.get('/', function(req, res, next) {
+router.get('/sql/admin', function(req, res, next) {
     /*res.render('admin', json1);*/
     /*res.send('respond with a resource');*/
     console.log('req.body:'+req.body.title);
@@ -44,8 +44,8 @@ router.get('/', function(req, res, next) {
         }
     })
 });
-router.get('/a', function(req, res, next) {
-    res.render('test', { title: '/a' ,str: 'aaaaaaaaa'});
+router.get('/', function(req, res, next) {
+    res.render('admin');
     /*res.send('respond with a resource');*/
 });
 module.exports = router;

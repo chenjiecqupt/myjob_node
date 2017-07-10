@@ -47,10 +47,10 @@
           console.log($('#name1').html());
           $.ajax({
               type:'GET',
-              url: '/admin',
+              url: '/sql/admin',
               data:'name='+$('#name').val()+'&name2='+$('#name1').html(),
               success:function(msg){
-                /*console.log(msg);*/
+                console.log(msg);
               },
               error:function(){
                   console.log('error')
