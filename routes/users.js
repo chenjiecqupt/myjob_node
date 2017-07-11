@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var query = require('../server/test2');
 /*var request = require('request');*/
 var json1 = { title: 'Express' ,str: 'info for users'};
 /* GET users listing. */
@@ -30,6 +31,21 @@ var json1 = { title: 'Express' ,str: 'info for users'};
 router.get('/a', function(req, res, next) {
     res.render('a', { title: '/a' ,str: 'aaaaaaaaa'});
     /*res.send('respond with a resource');*/
+});
+router.get('/query',function(req,res,next){
+    query("select * from person where id='4'",function(err,vals,fields){
+        console.log('err:'+err);
+        console.log('vals:'+vals);
+        console.log('fields:'+fields);
+        if(err===null){
+            res.send({
+                name:'chenjie',
+                items: vals
+            });
+        }else{
+            res.send(err);
+        }
+    })
 });
 module.exports = router;
 /*

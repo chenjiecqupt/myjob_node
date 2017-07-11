@@ -45,7 +45,7 @@ router.get('/sql/admin', function(req, res, next) {
     })
 });
 router.get('/', function(req, res, next) {
-    res.render('admin');
+    res.render('admin',{name:'admin'});
     /*res.send('respond with a resource');*/
 });
 module.exports = router;

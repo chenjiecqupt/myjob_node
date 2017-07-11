@@ -14,40 +14,14 @@
 </h3>
 <input id="name" type="text" name="name" value="x">
 <button class="btn btn-default">修改</button>
-<table>
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>idcard</th>
-      <th>name</th>
-      <th>unit_oid</th>
-    </tr>
-  </thead>
-    <% for(var i=0; i<items.length; i++) { %>
-      <tr>
-          <td>
-              <%=items[i].id %>
-          </td>
-        <td>
-            <%=items[i].idcard %>
-        </td>
-        <td>
-            <%=items[i].name %>
-        </td>
-        <td>
-            <%=items[i].unit_oid %>
-        </td>
-      </tr>
-    <% } %>
-</table>
-<script src="js/jquery-1.12.4.js"></script>
+<script src="/js/jquery-1.12.4.js"></script>
 <script>
   $(function(){
       $('.btn').click(function(){
           console.log($('#name1').html());
           $.ajax({
               type:'GET',
-              url: '/sql/admin',
+              url: '/users/query',
               data:'name='+$('#name').val()+'&name2='+$('#name1').html(),
               success:function(msg){
                 console.log(msg);
