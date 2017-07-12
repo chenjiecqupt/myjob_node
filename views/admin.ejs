@@ -12,7 +12,7 @@
     <span id="name1" class="name1"><%=name%></span>
   登录系统
 </h3>
-<input id="name" type="text" name="name" value="x">
+<input id="name" type="text" name="name" value="">
 <button class="btn btn-default">修改</button>
 <script src="/js/jquery-1.12.4.js"></script>
 <script>
@@ -22,7 +22,7 @@
           $.ajax({
               type:'GET',
               url: '/users/query',
-              data:'name='+$('#name').val()+'&name2='+$('#name1').html(),
+              data:'id='+$('#name').val()+'&name2='+$('#name1').html(),
               success:function(msg){
                 console.log(msg);
               },

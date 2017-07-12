@@ -7,9 +7,9 @@
 <body ng-app="jobApp">
     <input type="text" ng-model="root.text">
     <div>你输入内容为：<span ng-bind="root.text"></span></div>
-    <div ng-view></div>
+    <div ui-view></div>
 </body>
 <script src="framework/angular.min.js"></script>
-<script src="framework/angular-route.js"></script>
+<script src="framework/angular-ui-router.js"></script>
 <script src="js/app.js"></script>
 </html>

@@ -13,7 +13,7 @@
     <span id="name1" class="name1"><%=title%></span>
     登录系统
 </h3>
-<input id="name" type="text" name="name" value="x">
+<input id="name" type="text" name="id" value="x">
 <button class="btn btn-default">获取表格数据</button>
 <div id="table">
     <table>
@@ -37,10 +37,11 @@
             console.log($('#name1').html());
             $.ajax({
                 type:'GET',
-                url: 'admin/sql/admin',
-                data:'name='+$('#name').val()+'&name2='+$('#name1').html(),
+                url: '/users/query',
+                data:'id='+$('#name').val()+'&name2='+$('#name1').html(),
                 success:function(msg){
-                    console.log(msg.name);
+                    $('tbody').empty();
+                    console.log(msg);
                     var str='';
                     for(var i=0;i<msg.items.length;i++){
                         str +=

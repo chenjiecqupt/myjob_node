@@ -33,19 +33,37 @@ router.get('/a', function(req, res, next) {
     /*res.send('respond with a resource');*/
 });
 router.get('/query',function(req,res,next){
-    query("select * from person where id='4'",function(err,vals,fields){
-        console.log('err:'+err);
-        console.log('vals:'+vals);
-        console.log('fields:'+fields);
-        if(err===null){
-            res.send({
-                name:'chenjie',
-                items: vals
-            });
-        }else{
-            res.send(err);
-        }
-    })
+    console.log('id:'+req.query.id);
+    if(req.query.id!==''){
+        query("select * from person where id='"+req.query.id+"'",function(err,vals,fields){
+            console.log('err:'+err);
+            console.log('vals:'+vals);
+            console.log('fields:'+fields);
+            if(err===null){
+                res.send({
+                    name:'chenjie',
+                    items: vals
+                });
+            }else{
+                res.send(err);
+            }
+        })
+    }else{
+        query("select * from person",function(err,vals,fields){
+            console.log('err:'+err);
+            console.log('vals:'+vals);
+            console.log('fields:'+fields);
+            if(err===null){
+                res.send({
+                    name:'chenjie',
+                    items: vals
+                });
+            }else{
+                res.send(err);
+            }
+        })
+    }
+
 });
 module.exports = router;
 /*
