@@ -4,7 +4,7 @@ var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.sendfile('./public/myVue/index.html')
+  res.sendfile('./public/myVue/dist/index.html')
 });
 /*router.get('/test', function(req, res, next) {
     res.render('index', { title: 'Express' ,str: '测试'});

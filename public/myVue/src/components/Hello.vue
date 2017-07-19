@@ -17,6 +17,7 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <button @click="get">点击请求数据</button>
   </div>
 </template>
 
@@ -27,6 +28,16 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  methods:{
+      get:function(){
+          this.$http.get('users/query',{id:2})
+            .then(function(res){
+              console.log(res.body);
+            },function(){
+              console.log('error!');
+            })
+      }
   }
 }
 </script>
