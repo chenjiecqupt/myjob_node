@@ -4,23 +4,12 @@ var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var str= '没有读取到数据';
-    fs.readFile("routes/test.txt",'utf-8',function(err,data){
-        if(err){
-            console.log(err);
-        }else{
-            console.log(data);
-            str = data;
-            res.render('test1', { title: 'Express' ,str: str});
-        }
-    });
-    console.log('test1');
-    /*res.render('test1', { title: 'Express' ,str: str});*/
+  res.sendfile('./public/myVue/index.html')
 });
-router.get('/test', function(req, res, next) {
+/*router.get('/test', function(req, res, next) {
     res.render('index', { title: 'Express' ,str: '测试'});
     console.log('test1');
-    /*res.render('test1', { title: 'Express' ,str: str});*/
+    /!*res.render('test1', { title: 'Express' ,str: str});*!/
 });
 router.get('/js', function(req, res, next) {
     var str= '没有读取到数据';
@@ -33,7 +22,7 @@ router.get('/js', function(req, res, next) {
         }
     });
     console.log('test1');
-    /*res.render('test1', { title: 'Express' ,str: str});*/
+    /!*res.render('test1', { title: 'Express' ,str: str});*!/
 });
 router.get('/json', function(req, res, next) {
     var str= '没有读取到数据';
@@ -46,7 +35,7 @@ router.get('/json', function(req, res, next) {
         }
     });
     console.log('json');
-    /*res.render('test1', { title: 'Express' ,str: str});*/
+    /!*res.render('test1', { title: 'Express' ,str: str});*!/
 });
 router.get('/img', function(req, res, next) {
     var str= '没有读取到数据';
@@ -59,9 +48,9 @@ router.get('/img', function(req, res, next) {
         }
     });
     console.log('test1');
-    /*res.render('test1', { title: 'Express' ,str: str});*/
+    /!*res.render('test1', { title: 'Express' ,str: str});*!/
 });
 router.get('/sql', function(req, res, next) {
     res.render('test1', { title: 'Express' ,str: '345345'});
-});
+});*/
 module.exports = router;
