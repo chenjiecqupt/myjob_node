@@ -7,5 +7,5 @@ var router = express.Router();
 router.get('/',function(req,res,next){
     res.render('angular',{title:'angular'});
 });
-module.exports = router;
+
 module.exports = router;
