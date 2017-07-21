@@ -1,9 +1,11 @@
 import Vue from 'vue'
-import vue_resource from 'vue-resource'
+import vueResource from 'vue-resource'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
+import Admin from '@/components/Admin'
 
-Vue.use(Router)
+Vue.use(Router);
+Vue.use(vueResource);
 
 export default new Router({
   routes: [
@@ -11,13 +13,13 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Hello
-    }/*,
-    {
-      path: '/',
-      name: 'Hello',
-      component: Hello
     },
     {
+      path: '/admin',
+      name: 'admin',
+      component: Admin
+    },
+    /*{
       path: '/',
       name: 'Hello',
       component: Hello

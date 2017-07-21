@@ -2,3 +2,11 @@ body{
   min-width: 1366px;
   overflow-x: scroll;
 }
+.container{
+  min-width: 1366px;
+  overflow-x: scroll;
+  margin-top: 20px;
+}
+.navbar{
+  border-radius: 0px!important;
+}
