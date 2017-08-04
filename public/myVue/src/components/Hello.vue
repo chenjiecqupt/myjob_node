@@ -4,23 +4,21 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-2 col-md-2 col-ms-3">
-          <ul class="list-group">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-          </ul>
+          <myLeftNav></myLeftNav>
         </div>
         <div class="col-xs-10 col-md-10 col-ms-9">
           <div class="jumbotron">
-            <h1>Hello, world!</h1>
-            <p>...</p>
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+            <h1>welcome cj's blog!</h1>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">去写blog</a></p>
           </div>
+          <ul class="info-list">
+            <li class="info-list">
+
+            </li>
+          </ul>
         </div>
       </div>
-      <button v-on:click="getting">点击请求数据</button>
+      <!--<button v-on:click="getting">点击请求数据</button>
       <table class="table">
         <thead>
         <tr>
@@ -38,7 +36,7 @@
           <td>{{ item.unit_oid }}</td>
         </tr>
         </tbody>
-      </table>
+      </table>-->
     </div>
     <my-footer></my-footer>
   </div>
@@ -46,7 +44,8 @@
 
 <script>
   import myHeader from './myHeader';
-  import myFooter from './myFooter'
+  import myFooter from './myFooter';
+  import myLeftNav from './myLeftNav';
 export default {
   name: 'hello',
   data () {
@@ -57,7 +56,8 @@ export default {
   },
   components:{
     myHeader,
-    myFooter
+    myFooter,
+    myLeftNav
   },
   methods:{
     getting:function(){

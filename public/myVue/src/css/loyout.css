@@ -4,7 +4,6 @@ body{
 }
 .container{
   min-width: 1366px;
-  overflow-x: scroll;
   margin-top: 20px;
 }
 .navbar{
