@@ -16,7 +16,7 @@ var pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
     password: 'root',
-    database: 'test',
+    database: 'backbone',
     port: 3306
 });
 

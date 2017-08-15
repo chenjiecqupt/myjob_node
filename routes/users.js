@@ -35,7 +35,7 @@ router.get('/a', function(req, res, next) {
 router.get('/query',function(req,res,next){
     console.log('id:'+req.query.id);
     if(req.query.id!==''){
-        query("select * from user where id='"+req.query.id+"'",function(err,vals,fields){
+        query("select * from users where id='"+req.query.id+"'",function(err,vals,fields){
             console.log('err:'+err);
             console.log('vals:'+vals);
             console.log('fields:'+fields);
@@ -49,14 +49,14 @@ router.get('/query',function(req,res,next){
             }
         })
     }else{
-        query("select * from user",function(err,vals,fields){
+        query("select * from users",function(err,vals,fields){
             console.log('err:'+err);
             console.log('vals:'+vals);
             console.log('fields:'+fields);
             if(err===null){
                 res.send({
                     name:'chenjie',
-                    items: vals
+                    items: fields
                 });
             }else{
                 res.send(err);

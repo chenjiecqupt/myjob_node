@@ -13,11 +13,7 @@
     <span id="name1" class="name1"><%=title%></span>
     登录系统
 </h3>
-<<<<<<< HEAD
 <input id="name" type="text" name="id" value="">
-=======
-<input id="name" type="text" name="id" value="5">
->>>>>>> 23eef60fed2ade434400e6e598652743e6aefdca
 <button class="btn btn-default">获取表格数据</button>
 <div id="table">
     <table>
@@ -41,6 +37,7 @@
             console.log($('#name1').html());
             $.ajax({
                 type:'GET',
+
                 url: '/users/query',
                 data:'id='+$('#name').val()+'&name2='+$('#name1').html(),
                 success:function(msg){
